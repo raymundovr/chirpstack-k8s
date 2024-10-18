@@ -3,11 +3,14 @@
 # Directory containing your configuration files
 CONFIG_DIR="../configuration/chirpstack-gateway-bridge"
 
-# Output file for the ConfigMap
-OUTPUT_FILE="chirpstack-gw-configmap.yaml"
-
 # ConfigMap name
 CONFIGMAP_NAME="chirpstack-gw-config"
+
+OUTPUT_DIR="./configmaps"
+mkdir -p $OUTPUT_DIR
+
+# Output file for the ConfigMap
+OUTPUT_FILE="$OUTPUT_DIR/chirpstack-gw-configmap.yaml"
 
 # Write the initial part of the ConfigMap YAML to the output file
 cat <<EOF > $OUTPUT_FILE
