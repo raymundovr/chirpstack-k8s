@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chirpstack-rest-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chirpstack-rest-api
+  template:
+    metadata:
+      labels:
+        app: chirpstack-rest-api
+    spec:
+      containers:
+        - name: chirpstack-rest-api
+          image: chirpstack/chirpstack-rest-api:4
+          command: ["--server", "chirpstack:8080", "--bind", "0.0.0.0:8090", "--insecure"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chirpstack-rest-api
+spec:
+  selector:
+    app: chirpstack-rest-api
+  ports:
+    - protocol: TCP
+      port: 8090
+      targetPort: 8090

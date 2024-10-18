@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chirpstack
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chirpstack
+  template:
+    metadata:
+      labels:
+        app: chirpstack
+    spec:
+      containers:
+        - name: chirpstack
+          image: chirpstack/chirpstack:4
+          command: ["-c", "/etc/chirpstack"]
+          volumeMounts:
+            - name: chirpstack-config
+              mountPath: /etc/chirpstack
+            - name: lorawan-devices
+              mountPath: /opt/lorawan-devices
+          env:
+            - name: MQTT_BROKER_HOST
+              value: "mosquitto"
+            - name: REDIS_HOST
+              value: "redis"
+            - name: POSTGRESQL_HOST
+              value: "postgres"
+      volumes:
+        - name: chirpstack-config
+          hostPath:
+            path: /home/r/src/chirpstack-docker/kubernetes/configuration/chirpstack
+        - name: lorawan-devices
+          hostPath:
+            path: /home/r/src/chirpstack-docker/kubernetes/lorawan-devices
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chirpstack
+spec:
+  selector:
+    app: chirpstack
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chirpstack-gateway-bridge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chirpstack-gateway-bridge
+  template:
+    metadata:
+      labels:
+        app: chirpstack-gateway-bridge
+    spec:
+      containers:
+        - name: chirpstack-gateway-bridge
+          image: chirpstack/chirpstack-gateway-bridge:4
+          volumeMounts:
+            - name: chirpstack-gateway-bridge-config
+              mountPath: /etc/chirpstack-gateway-bridge
+          env:
+            - name: INTEGRATION__MQTT__EVENT_TOPIC_TEMPLATE
+              value: "eu868/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+            - name: INTEGRATION__MQTT__STATE_TOPIC_TEMPLATE
+              value: "eu868/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+            - name: INTEGRATION__MQTT__COMMAND_TOPIC_TEMPLATE
+              value: "eu868/gateway/{{ .GatewayID }}/command/#"
+      volumes:
+        - name: chirpstack-gateway-bridge-config
+          hostPath:
+            path: /home/r/src/chirpstack-docker/kubernetes/configuration/chirpstack-gateway-bridge
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chirpstack-gateway-bridge
+spec:
+  selector:
+    app: chirpstack-gateway-bridge
+  ports:
+    - protocol: UDP
+      port: 1700
+      targetPort: 1700
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chirpstack-gateway-bridge-basicstation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chirpstack-gateway-bridge-basicstation
+  template:
+    metadata:
+      labels:
+        app: chirpstack-gateway-bridge-basicstation
+    spec:
+      containers:
+        - name: chirpstack-gateway-bridge-basicstation
+          image: chirpstack/chirpstack-gateway-bridge:4
+          command: ["-c", "/etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge-basicstation-eu868.toml"]
+          volumeMounts:
+            - name: chirpstack-gateway-bridge-config
+              mountPath: /etc/chirpstack-gateway-bridge
+      volumes:
+        - name: chirpstack-gateway-bridge-config
+          hostPath:
+            path: /home/r/src/chirpstack-docker/kubernetes/configuration/chirpstack-gateway-bridge
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chirpstack-gateway-bridge-basicstation
+spec:
+  selector:
+    app: chirpstack-gateway-bridge-basicstation
+  ports:
+    - protocol: TCP
+      port: 3001
+      targetPort: 3001
