@@ -1,4 +1,12 @@
-# ChirpStack Docker example
+# ChirpStack on Kubernetes from the Docker example
+
+All interesting files are within `kubernetes/`.
+
+You can deploy by running `cd kubernetes && bash install.sh`.
+
+Requires [Kubernetes Gateway API](https://gateway-api.sigs.k8s.io/) for the HTTP public routes.
+
+## Docker example
 
 This repository contains a skeleton to setup the [ChirpStack](https://www.chirpstack.io)
 open-source LoRaWAN Network Server (v4) using [Docker Compose](https://docs.docker.com/compose/).
