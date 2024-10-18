@@ -1,0 +1,1617 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: chirpstack-gw-config
+data:
+  chirpstack-gateway-bridge-basicstation-as923_2.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="as923_2/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="as923_2/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="as923_2/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AS923"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          921400000,
+          921600000,
+          921800000,
+          922000000,
+          922200000,
+          922400000,
+          922600000,
+          922800000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=922700000
+        bandwidth=250000  
+        spreading_factor=7
+  chirpstack-gateway-bridge-basicstation-as923_3.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="as923_3/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="as923_3/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="as923_3/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AS923"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          916600000,
+          916800000,
+          917000000,
+          917200000,
+          917400000,
+          917600000,
+          917800000,
+          918000000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=917900000
+        bandwidth=250000  
+        spreading_factor=7
+  chirpstack-gateway-bridge-basicstation-as923_4.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="as923_4/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="as923_4/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="as923_4/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AS923"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          917300000,
+          917500000,
+          917700000,
+          917900000,
+          918100000,
+          918300000,
+          918500000,
+          918700000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=918600000
+        bandwidth=250000  
+        spreading_factor=7
+  chirpstack-gateway-bridge-basicstation-as923.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="as923/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="as923/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="as923/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AS923"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          923200000,
+          923400000,
+          923600000,
+          923800000,
+          924000000,
+          924200000,
+          924400000,
+          924600000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=924500000
+        bandwidth=250000  
+        spreading_factor=7
+  chirpstack-gateway-bridge-basicstation-au915_0.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="au915_0/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="au915_0/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="au915_0/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AU915"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          915200000,
+          915400000,
+          915600000,
+          915800000,
+          916000000,
+          916200000,
+          916400000,
+          916600000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=915900000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-au915_1.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="au915_1/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="au915_1/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="au915_1/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AU915"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          916800000,
+          917000000,
+          917200000,
+          917400000,
+          917600000,
+          917800000,
+          918000000,
+          918200000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=917500000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-au915_2.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="au915_2/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="au915_2/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="au915_2/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AU915"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          918400000,
+          918600000,
+          918800000,
+          919000000,
+          919200000,
+          919400000,
+          919600000,
+          919800000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=919100000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-au915_3.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="au915_3/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="au915_3/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="au915_3/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AU915"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          920000000,
+          920200000,
+          920400000,
+          920600000,
+          920800000,
+          921000000,
+          921200000,
+          921400000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=920700000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-au915_4.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="au915_4/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="au915_4/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="au915_4/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AU915"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          921600000,
+          921800000,
+          922000000,
+          922200000,
+          922400000,
+          922600000,
+          922800000,
+          923000000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=922300000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-au915_5.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="au915_5/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="au915_5/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="au915_5/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AU915"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          923200000,
+          923400000,
+          923600000,
+          923800000,
+          924000000,
+          924200000,
+          924400000,
+          924600000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=923900000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-au915_6.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="au915_6/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="au915_6/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="au915_6/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AU915"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          924800000,
+          925000000,
+          925200000,
+          925400000,
+          925600000,
+          925800000,
+          926000000,
+          926200000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=925500000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-au915_7.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="au915_7/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="au915_7/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="au915_7/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="AU915"
+      frequency_min=915000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          926400000,
+          926600000,
+          926800000,
+          927000000,
+          927200000,
+          927400000,
+          927600000,
+          927800000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=927100000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-cn470_0.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_0/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_0/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_0/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          470300000,
+          470500000,
+          470700000,
+          470900000,
+          471100000,
+          471300000,
+          471500000,
+          471700000,
+        ]
+  chirpstack-gateway-bridge-basicstation-cn470_10.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_10/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_10/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_10/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          486300000,
+          486500000,
+          486700000,
+          486900000,
+          487100000,
+          487300000,
+          487500000,
+          487700000,
+        ]
+  chirpstack-gateway-bridge-basicstation-cn470_11.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_11/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_11/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_11/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          487900000,
+          488100000,
+          488300000,
+          488500000,
+          488700000,
+          488900000,
+          489100000,
+          489300000,
+        ]
+  chirpstack-gateway-bridge-basicstation-cn470_1.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_1/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_1/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_1/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          471900000,
+          472100000,
+          472300000,
+          472500000,
+          472700000,
+          472900000,
+          473100000,
+          473300000,
+        ]
+  chirpstack-gateway-bridge-basicstation-cn470_2.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_2/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_2/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_2/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          473500000,
+          473700000,
+          473900000,
+          474100000,
+          474300000,
+          474500000,
+          474700000,
+          474900000,
+        ]
+  chirpstack-gateway-bridge-basicstation-cn470_3.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_3/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_3/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_3/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          475100000,
+          475300000,
+          475500000,
+          475700000,
+          475900000,
+          476100000,
+          476300000,
+          476500000,
+        ]
+  chirpstack-gateway-bridge-basicstation-cn470_4.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_4/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_4/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_4/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          476700000,
+          476900000,
+          477100000,
+          477300000,
+          477500000,
+          477700000,
+          477900000,
+          478100000,
+        ]
+  chirpstack-gateway-bridge-basicstation-cn470_5.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_5/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_5/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_5/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          478300000,
+          478500000,
+          478700000,
+          478900000,
+          479100000,
+          479300000,
+          479500000,
+          479700000,
+        ]
+  chirpstack-gateway-bridge-basicstation-cn470_6.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_6/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_6/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_6/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          479900000,
+          480100000,
+          480300000,
+          480500000,
+          480700000,
+          480900000,
+          481100000,
+          481300000,
+        ]
+  chirpstack-gateway-bridge-basicstation-cn470_7.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_7/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_7/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_7/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          481500000,
+          481700000,
+          481900000,
+          482100000,
+          482300000,
+          482500000,
+          482700000,
+          482900000,
+        ]
+  chirpstack-gateway-bridge-basicstation-cn470_8.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_8/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_8/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_8/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          483100000,
+          483300000,
+          483500000,
+          483700000,
+          483900000,
+          484100000,
+          484300000,
+          484500000,
+        ]
+  chirpstack-gateway-bridge-basicstation-cn470_9.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="cn470_9/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="cn470_9/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="cn470_9/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="CN470"
+      frequency_min=470000000
+      frequency_max=510000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          484700000,
+          484900000,
+          485100000,
+          485300000,
+          485500000,
+          485700000,
+          485900000,
+          486100000,
+        ]
+  chirpstack-gateway-bridge-basicstation-eu433.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="eu433/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="eu433/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="eu433/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="EU433"
+      frequency_min=433050000
+      frequency_max=434900000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          433175000,
+          433375000,
+          433575000,
+        ]
+  chirpstack-gateway-bridge-basicstation-eu868.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="eu868/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="eu868/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="eu868/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="EU868"
+      frequency_min=863000000
+      frequency_max=870000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          868100000,
+          868300000,
+          868500000,
+          867100000,
+          867300000,
+          867500000,
+          867700000,
+          867900000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=868300000
+        bandwidth=250000  
+        spreading_factor=7
+      
+        [backend.basic_station.concentrators.fsk]
+        frequency=868800000
+  chirpstack-gateway-bridge-basicstation-in865.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="in865/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="in865/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="in865/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="IN865"
+      frequency_min=865000000
+      frequency_max=867000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          865062500,
+          865402500,
+          865985000,
+        ]
+  chirpstack-gateway-bridge-basicstation-kr920.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="kr920/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="kr920/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="kr920/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="KR920"
+      frequency_min=920900000
+      frequency_max=923300000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          922100000,
+          922300000,
+          922500000,
+        ]
+  chirpstack-gateway-bridge-basicstation-ru864.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="ru864/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="ru864/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="ru864/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="RU864"
+      frequency_min=863000000
+      frequency_max=870000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          868900000,
+          869100000,
+        ]
+  chirpstack-gateway-bridge-basicstation-us915_0.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="us915_0/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="us915_0/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="us915_0/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="US915"
+      frequency_min=923000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          902300000,
+          902500000,
+          902700000,
+          902900000,
+          903100000,
+          903300000,
+          903500000,
+          903700000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=903000000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-us915_1.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="us915_1/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="us915_1/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="us915_1/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="US915"
+      frequency_min=923000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          903900000,
+          904100000,
+          904300000,
+          904500000,
+          904700000,
+          904900000,
+          905100000,
+          905300000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=904600000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-us915_2.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="us915_2/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="us915_2/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="us915_2/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="US915"
+      frequency_min=923000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          905500000,
+          905700000,
+          905900000,
+          906100000,
+          906300000,
+          906500000,
+          906700000,
+          906900000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=906200000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-us915_3.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="us915_3/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="us915_3/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="us915_3/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="US915"
+      frequency_min=923000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          907100000,
+          907300000,
+          907500000,
+          907700000,
+          907900000,
+          908100000,
+          908300000,
+          908500000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=907800000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-us915_4.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="us915_4/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="us915_4/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="us915_4/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="US915"
+      frequency_min=923000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          908700000,
+          908900000,
+          909100000,
+          909300000,
+          909500000,
+          909700000,
+          909900000,
+          910100000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=909400000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-us915_5.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="us915_5/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="us915_5/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="us915_5/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="US915"
+      frequency_min=923000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          910300000,
+          910500000,
+          910700000,
+          910900000,
+          911100000,
+          911300000,
+          911500000,
+          911700000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=911000000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-us915_6.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="us915_6/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="us915_6/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="us915_6/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="US915"
+      frequency_min=923000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          911900000,
+          912100000,
+          912300000,
+          912500000,
+          912700000,
+          912900000,
+          913100000,
+          913300000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=912600000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge-basicstation-us915_7.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""
+    
+    [integration.mqtt]
+    event_topic_template="us915_7/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+    state_topic_template="us915_7/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+    command_topic_template="us915_7/gateway/{{ .GatewayID }}/command/#"
+    
+    [backend]
+    type="basic_station"
+    
+      [backend.basic_station]
+      bind=":3001"
+      tls_cert=""
+      tls_key=""
+      ca_cert=""
+    
+      region="US915"
+      frequency_min=923000000
+      frequency_max=928000000
+    
+    
+      [[backend.basic_station.concentrators]]
+    
+        [backend.basic_station.concentrators.multi_sf]
+        frequencies=[
+          913500000,
+          913700000,
+          913900000,
+          914100000,
+          914300000,
+          914500000,
+          914700000,
+          914900000,
+        ]
+      
+        [backend.basic_station.concentrators.lora_std]
+        frequency=914200000
+        bandwidth=500000  
+        spreading_factor=8
+  chirpstack-gateway-bridge.toml: |
+    # See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+    # configuration example and documentation.
+    
+    [integration.mqtt.auth.generic]
+    servers=["tcp://mosquitto:1883"]
+    username=""
+    password=""

@@ -12,10 +12,21 @@ spec:
       labels:
         app: chirpstack
     spec:
+      initContainers:
+        - name: init-configuration
+          image: busybox
+          command: ['sh', '-c', 'cp /config-1/* /config/ && cp /config-2/* /config/']
+          volumeMounts:
+            - name: chirpstack-config-1
+              mountPath: /config-1
+            - name: chirpstack-config-2
+              mountPath: /config-2
+            - name: chirpstack-config
+              mountPath: /config
       containers:
         - name: chirpstack
           image: chirpstack/chirpstack:4
-          command: ["-c", "/etc/chirpstack"]
+          command: ["chirpstack", "-c", "/etc/chirpstack"]
           volumeMounts:
             - name: chirpstack-config
               mountPath: /etc/chirpstack
@@ -29,12 +40,29 @@ spec:
             - name: POSTGRESQL_HOST
               value: "postgres"
       volumes:
+        - name: chirpstack-config-1
+          configMap:
+            name: chirpstack-config-1
+        - name: chirpstack-config-2
+          configMap:
+            name: chirpstack-config-2
         - name: chirpstack-config
-          hostPath:
-            path: /home/r/src/chirpstack-docker/kubernetes/configuration/chirpstack
+          emptyDir: {}
         - name: lorawan-devices
-          hostPath:
-            path: /home/r/src/chirpstack-docker/kubernetes/lorawan-devices
+          persistentVolumeClaim:
+            claimName: lorawan-devices-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: lorawan-devices-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: levv-durable-storage
 ---
 apiVersion: v1
 kind: Service
