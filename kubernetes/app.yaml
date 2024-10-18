@@ -62,7 +62,6 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: levv-durable-storage
 ---
 apiVersion: v1
 kind: Service
@@ -85,7 +84,7 @@ spec:
     - name: default-gateway
       namespace: default
   hostnames:
-    - "chirpstack.levv.io"
+    - "chirpstack.your-domain.com"
   rules:
     - matches:
         - path:

@@ -34,7 +34,6 @@ spec:
   resources:
     requests:
       storage: 512Mi
-  storageClassName: levv-durable-storage
 ---
 apiVersion: v1
 kind: Service

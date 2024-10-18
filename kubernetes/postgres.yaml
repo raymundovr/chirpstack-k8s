@@ -76,7 +76,6 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: levv-durable-storage
 ---
 apiVersion: v1
 kind: Service

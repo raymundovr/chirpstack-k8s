@@ -39,7 +39,7 @@ spec:
     - name: default-gateway
       namespace: default
   hostnames:
-    - "chirpstack-api.levv.io"
+    - "chirpstack-api.your-domain.com"
   rules:
     - matches:
         - path:
